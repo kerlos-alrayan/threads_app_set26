@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "27969993620",
+    "project_id": "threads-app-set26",
+    "storage_bucket": "threads-app-set26.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:27969993620:android:fcd5f79767a78465832d81",
+        "android_client_info": {
+          "package_name": "com.threads_app_set26.threads_app_set26"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "27969993620-7romlbbtsk1eno59soch82slb751qgk9.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDfCrPRYjVKJNTWG1sHaCil-HHUaMGRXS4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "27969993620-7romlbbtsk1eno59soch82slb751qgk9.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
