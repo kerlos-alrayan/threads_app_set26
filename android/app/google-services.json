@@ -1,6 +1,7 @@
 {
   "project_info": {
     "project_number": "27969993620",
+    "firebase_url": "https://threads-app-set26-default-rtdb.europe-west1.firebasedatabase.app",
     "project_id": "threads-app-set26",
     "storage_bucket": "threads-app-set26.appspot.com"
   },
@@ -13,6 +14,14 @@
         }
       },
       "oauth_client": [
+        {
+          "client_id": "27969993620-4e54eovee8a5nidjru6amev0op0efacd.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.threads_app_set26.threads_app_set26",
+            "certificate_hash": "b26d57873c3cd05d404555e08215e404470f5d04"
+          }
+        },
         {
           "client_id": "27969993620-7romlbbtsk1eno59soch82slb751qgk9.apps.googleusercontent.com",
           "client_type": 3
@@ -29,6 +38,13 @@
             {
               "client_id": "27969993620-7romlbbtsk1eno59soch82slb751qgk9.apps.googleusercontent.com",
               "client_type": 3
+            },
+            {
+              "client_id": "27969993620-9geuggaalim8uopididvtbuk2kcag2u9.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.threadsappset26.threadsAppSet26"
+              }
             }
           ]
         }
