@@ -8,22 +8,22 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:27969993620:android:fcd5f79767a78465832d81",
+        "mobilesdk_app_id": "1:27969993620:android:36e2abc9ac3b44cc832d81",
         "android_client_info": {
-          "package_name": "com.threads_app_set26.threads_app_set26"
+          "package_name": "com.threads_app_set26"
         }
       },
       "oauth_client": [
         {
-          "client_id": "27969993620-4e54eovee8a5nidjru6amev0op0efacd.apps.googleusercontent.com",
+          "client_id": "27969993620-fvodma2fdpvngjmbhgdsrkn841ujie2m.apps.googleusercontent.com",
           "client_type": 1,
           "android_info": {
-            "package_name": "com.threads_app_set26.threads_app_set26",
+            "package_name": "com.threads_app_set26",
             "certificate_hash": "b26d57873c3cd05d404555e08215e404470f5d04"
           }
         },
         {
-          "client_id": "27969993620-7romlbbtsk1eno59soch82slb751qgk9.apps.googleusercontent.com",
+          "client_id": "27969993620-dph1r2gmt24av1coj65b89t5cdapo6r5.apps.googleusercontent.com",
           "client_type": 3
         }
       ],

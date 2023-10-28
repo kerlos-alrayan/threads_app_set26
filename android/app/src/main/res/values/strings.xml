@@ -1,0 +1,6 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">threads_app</string>
+    <string name="facebook_app_id">2194121340978692</string>
+    <string name="fb_login_protocol_scheme">fbc2fa58cec85e421f83d9d330926eed32</string>
+</resources>

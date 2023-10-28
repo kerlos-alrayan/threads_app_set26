@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:threads_app_set26/repository/widgets/post_widget.dart';
+import 'package:threads_app_set26/presentation/widgets/post_widget.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -20,15 +20,15 @@ class HomeScreen extends StatelessWidget {
                   color: Colors.black,
                 ),
               ),
-              Past(),
-              Past(),
-              Past(),
-              Past(),
-              Past(),
-              Past(),
-              Past(),
-              Past(),
-              Past(),
+              Post(),
+              Post(),
+              Post(),
+              Post(),
+              Post(),
+              Post(),
+              Post(),
+              Post(),
+              Post(),
             ],
           ),
         ),

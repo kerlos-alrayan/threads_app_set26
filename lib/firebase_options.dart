@@ -51,9 +51,10 @@ class DefaultFirebaseOptions {
 
   static const FirebaseOptions android = FirebaseOptions(
     apiKey: 'AIzaSyDfCrPRYjVKJNTWG1sHaCil-HHUaMGRXS4',
-    appId: '1:27969993620:android:fcd5f79767a78465832d81',
+    appId: '1:27969993620:android:36e2abc9ac3b44cc832d81',
     messagingSenderId: '27969993620',
     projectId: 'threads-app-set26',
+    databaseURL: 'https://threads-app-set26-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'threads-app-set26.appspot.com',
   );
 
@@ -62,7 +63,9 @@ class DefaultFirebaseOptions {
     appId: '1:27969993620:ios:f3a3eb475cb94273832d81',
     messagingSenderId: '27969993620',
     projectId: 'threads-app-set26',
+    databaseURL: 'https://threads-app-set26-default-rtdb.europe-west1.firebasedatabase.app',
     storageBucket: 'threads-app-set26.appspot.com',
+    androidClientId: '27969993620-4e54eovee8a5nidjru6amev0op0efacd.apps.googleusercontent.com',
     iosClientId: '27969993620-9geuggaalim8uopididvtbuk2kcag2u9.apps.googleusercontent.com',
     iosBundleId: 'com.threadsappset26.threadsAppSet26',
   );

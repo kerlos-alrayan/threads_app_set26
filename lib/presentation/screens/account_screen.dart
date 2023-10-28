@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
-import 'package:threads_app_set26/repository/widgets/post_widget.dart';
+import 'package:threads_app_set26/presentation/widgets/post_widget.dart';
+
 /// Flutter code sample for [TabBar].
 
 class AccountScreen extends StatefulWidget {
@@ -248,11 +249,11 @@ class _AccountScreen extends State<AccountScreen>
                   controller: tabController,
                   children: [
                     ListView(children: [
-                      Past(),
-                      Past(),
-                      Past(),
-                      Past(),
-                      Past(),
+                      Post(),
+                      Post(),
+                      Post(),
+                      Post(),
+                      Post(),
                     ]),
                     Center(
                       child: Text('You haven\'t posted any replies yet.'),

@@ -1,7 +1,8 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:firebase_auth/firebase_auth.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_facebook_auth/flutter_facebook_auth.dart';
 import 'package:google_sign_in/google_sign_in.dart';
-import 'package:threads_app_set26/repository/screens/main_screen.dart';
 
 class LoginScreen extends StatelessWidget {
   const LoginScreen({super.key});
@@ -27,11 +28,9 @@ class LoginScreen extends StatelessWidget {
           ),
           // Login With
           GestureDetector(
-            onTap: () async{
+            onTap: () async {
               final credential = await signInWithGoogle();
-              if(credential.user != null){
-                Navigator.of(context).push(MaterialPageRoute(builder: (context) => MainScreen() ));
-              }
+              //final facebook = await signInWithFacebook();
             },
             child: Container(
               height: MediaQuery.of(context).size.height * 0.11,
@@ -53,8 +52,8 @@ class LoginScreen extends StatelessWidget {
               ),
               child: Padding(
                 padding: EdgeInsets.only(
-                    left: MediaQuery.of(context).size.width * 0.02,
-                    right: MediaQuery.of(context).size.width * 0.02,
+                  left: MediaQuery.of(context).size.width * 0.02,
+                  right: MediaQuery.of(context).size.width * 0.02,
                 ),
                 child: Center(
                   child: ListTile(
@@ -67,7 +66,7 @@ class LoginScreen extends StatelessWidget {
                           color: Color(0xffB2B3B2)),
                     ),
                     subtitle: Padding(
-                      padding:  EdgeInsets.only(
+                      padding: EdgeInsets.only(
                         top: MediaQuery.of(context).size.height * 0.005,
                       ),
                       child: Text(
@@ -79,11 +78,11 @@ class LoginScreen extends StatelessWidget {
                             color: Colors.white),
                       ),
                     ),
-                    trailing:
-                        Image.asset('assets/images/login_screen/logo_google.png',
-                        width: MediaQuery.of(context).size.width * 0.1,
-                          height: MediaQuery.of(context).size.height * 0.1,
-                        ),
+                    trailing: Image.asset(
+                      'assets/images/login_screen/logo_google.png',
+                      width: MediaQuery.of(context).size.width * 0.1,
+                      height: MediaQuery.of(context).size.height * 0.1,
+                    ),
                   ),
                 ),
               ),
@@ -104,12 +103,16 @@ class LoginScreen extends StatelessWidget {
       ),
     );
   }
-  Future<UserCredential> signInWithGoogle() async {
+
+  // Google
+  Future<void> signInWithGoogle() async {
     // Trigger the authentication flow
-    final GoogleSignInAccount? googleUser = await GoogleSignIn().signIn();
+    final GoogleSignInAccount? googleUser =
+        await GoogleSignIn(scopes: ['email']).signIn();
 
     // Obtain the auth details from the request
-    final GoogleSignInAuthentication? googleAuth = await googleUser?.authentication;
+    final GoogleSignInAuthentication? googleAuth =
+        await googleUser?.authentication;
 
     // Create a new credential
     final credential = GoogleAuthProvider.credential(
@@ -118,6 +121,32 @@ class LoginScreen extends StatelessWidget {
     );
 
     // Once signed in, return the UserCredential
-    return await FirebaseAuth.instance.signInWithCredential(credential);
+    await FirebaseAuth.instance.signInWithCredential(credential);
+
+    addDataToFirebase(googleUser);
+  }
+
+  void addDataToFirebase(GoogleSignInAccount? googleUser){
+    final name = googleUser?.displayName;
+    final photo = googleUser?.photoUrl;
+    final userId = FirebaseAuth.instance.currentUser?.uid;
+    final userCollection = FirebaseFirestore.instance.collection('user');
+    userCollection.doc(userId).set({
+      'username': name,
+      'photo' : photo,
+    });
+  }
+  //FaceBook
+  Future<UserCredential> signInWithFacebook() async {
+    // Trigger the sign-in flow
+    final LoginResult loginResult = await FacebookAuth.instance
+        .login(permissions: ['email', 'public_profile']);
+
+    // Create a credential from the access token
+    final OAuthCredential facebookAuthCredential =
+        FacebookAuthProvider.credential(loginResult.accessToken!.token);
+
+    // Once signed in, return the UserCredential
+    return FirebaseAuth.instance.signInWithCredential(facebookAuthCredential);
   }
 }
